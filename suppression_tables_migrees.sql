@@ -1,0 +1,228 @@
+-- =============================================
+-- SCRIPT DE SUPPRESSION DES TABLES MIGRÉES
+-- =============================================
+-- ATTENTION : Ce script supprime définitivement toutes les tables sources
+-- qui ont été migrées vers les nouvelles structures dimensionnelles.
+-- 
+-- Vérifiez que les migrations sont complètes et validées avant d'exécuter.
+-- 
+-- Date : 18 septembre 2025
+-- Projet : Appurement BD STATEDUC MINJEC
+-- =============================================
+
+-- =============================================
+-- 1. SUPPRESSION DES TABLES FORMATEURS MIGRÉES
+-- =============================================
+
+-- Tables de données formateurs
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[BESOIN_FORMATEUR]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[BESOIN_FORMATEUR];
+PRINT 'Table BESOIN_FORMATEUR supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[FORMATEUR_AGE]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[FORMATEUR_AGE];
+PRINT 'Table FORMATEUR_AGE supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[FORMATEURS_DIPLOME_ACAD]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[FORMATEURS_DIPLOME_ACAD];
+PRINT 'Table FORMATEURS_DIPLOME_ACAD supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[FORMATEURS_DIPLOME_PRO]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[FORMATEURS_DIPLOME_PRO];
+PRINT 'Table FORMATEURS_DIPLOME_PRO supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[PERSONNEL_CENTRE_DELEGATION]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[PERSONNEL_CENTRE_DELEGATION];
+PRINT 'Table PERSONNEL_CENTRE_DELEGATION supprimée';
+
+-- =============================================
+-- 2. SUPPRESSION DES TABLES PROGRAMMES MIGRÉES
+-- =============================================
+
+-- Tables de données programmes - Indicateurs par genre
+IF OBJECT_ID('[INDICATEURS_GENRES_144]') IS NOT NULL
+    DROP TABLE [INDICATEURS_GENRES_144];
+PRINT 'Table INDICATEURS_GENRES_144 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_GENRES_145]') IS NOT NULL
+    DROP TABLE [INDICATEURS_GENRES_145];
+PRINT 'Table INDICATEURS_GENRES_145 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_GENRES_146]') IS NOT NULL
+    DROP TABLE [INDICATEURS_GENRES_146];
+PRINT 'Table INDICATEURS_GENRES_146 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_GENRES_147]') IS NOT NULL
+    DROP TABLE [INDICATEURS_GENRES_147];
+PRINT 'Table INDICATEURS_GENRES_147 supprimée';
+
+-- Tables de données programmes - Indicateurs non-genre
+IF OBJECT_ID('[INDICATEURS_NON_GENRES_144]') IS NOT NULL
+    DROP TABLE [INDICATEURS_NON_GENRES_144];
+PRINT 'Table INDICATEURS_NON_GENRES_144 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_NON_GENRES_145]') IS NOT NULL
+    DROP TABLE [INDICATEURS_NON_GENRES_145];
+PRINT 'Table INDICATEURS_NON_GENRES_145 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_NON_GENRES_146]') IS NOT NULL
+    DROP TABLE [INDICATEURS_NON_GENRES_146];
+PRINT 'Table INDICATEURS_NON_GENRES_146 supprimée';
+
+IF OBJECT_ID('[INDICATEURS_NON_GENRES_147]') IS NOT NULL
+    DROP TABLE [INDICATEURS_NON_GENRES_147];
+PRINT 'Table INDICATEURS_NON_GENRES_147 supprimée';
+
+-- Tables de données programmes - Valeurs indicateurs par genre
+IF OBJECT_ID('[VALEURS_INDICATEURS_GENRES_PROG_144]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_GENRES_PROG_144];
+PRINT 'Table VALEURS_INDICATEURS_GENRES_PROG_144 supprimée';
+
+IF OBJECT_ID('[VALEURS_INDICATEURS_GENRES_PROG_145]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_GENRES_PROG_145];
+PRINT 'Table VALEURS_INDICATEURS_GENRES_PROG_145 supprimée';
+
+IF OBJECT_ID('[VALEURS_INDICATEURS_GENRES_PROG_146]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_GENRES_PROG_146];
+PRINT 'Table VALEURS_INDICATEURS_GENRES_PROG_146 supprimée';
+
+-- Tables de données programmes - Valeurs indicateurs non-genre
+IF OBJECT_ID('[VALEURS_INDICATEURS_NON_GENRES_PROG_144]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_NON_GENRES_PROG_144];
+PRINT 'Table VALEURS_INDICATEURS_NON_GENRES_PROG_144 supprimée';
+
+IF OBJECT_ID('[VALEURS_INDICATEURS_NON_GENRES_PROG_145]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_NON_GENRES_PROG_145];
+PRINT 'Table VALEURS_INDICATEURS_NON_GENRES_PROG_145 supprimée';
+
+IF OBJECT_ID('[VALEURS_INDICATEURS_NON_GENRES_PROG_146]') IS NOT NULL
+    DROP TABLE [VALEURS_INDICATEURS_NON_GENRES_PROG_146];
+PRINT 'Table VALEURS_INDICATEURS_NON_GENRES_PROG_146 supprimée';
+
+-- Tables de référence programmes (si elles ne sont plus utilisées)
+-- ATTENTION : Vérifiez que ces tables ne sont pas utilisées ailleurs avant suppression
+IF OBJECT_ID('[TYPE_INDICATEUR]') IS NOT NULL
+    DROP TABLE [TYPE_INDICATEUR];
+PRINT 'Table TYPE_INDICATEUR supprimée';
+
+IF OBJECT_ID('[TYPE_INDICATEURS_PROG_144]') IS NOT NULL
+    DROP TABLE [TYPE_INDICATEURS_PROG_144];
+PRINT 'Table TYPE_INDICATEURS_PROG_144 supprimée';
+
+IF OBJECT_ID('[TYPE_INDICATEURS_PROG_145]') IS NOT NULL
+    DROP TABLE [TYPE_INDICATEURS_PROG_145];
+PRINT 'Table TYPE_INDICATEURS_PROG_145 supprimée';
+
+IF OBJECT_ID('[TYPE_INDICATEURS_PROG_146]') IS NOT NULL
+    DROP TABLE [TYPE_INDICATEURS_PROG_146];
+PRINT 'Table TYPE_INDICATEURS_PROG_146 supprimée';
+
+-- =============================================
+-- 3. SUPPRESSION DES TABLES APPRENANTS MIGRÉES
+-- =============================================
+
+-- Tables de données apprenants - Effectifs par accompagnement
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_ACCOMP]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_ACCOMP];
+PRINT 'Table EFF_APPR_BENEFIC_ACCOMP supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_ACCOMP_2]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_ACCOMP_2];
+PRINT 'Table EFF_APPR_BENEFIC_ACCOMP_2 supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_KITS_INSTALLATION]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_BENEFIC_KITS_INSTALLATION];
+PRINT 'Table EFF_APPR_BENEFIC_KITS_INSTALLATION supprimée';
+
+-- Tables de données apprenants - Parcours d'abandon
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_TYPE_FORMATION]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_TYPE_FORMATION];
+PRINT 'Table EFF_APPR_ABAND_TYPE_FORMATION supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_SPECIALITE]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_SPECIALITE];
+PRINT 'Table EFF_APPR_ABAND_SPECIALITE supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_AGE]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_AGE];
+PRINT 'Table EFF_APPR_ABAND_AGE supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_NIVEAU_INSTRUCT]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_ABAND_NIVEAU_INSTRUCT];
+PRINT 'Table EFF_APPR_ABAND_NIVEAU_INSTRUCT supprimée';
+
+-- Tables de données apprenants - Effectifs par caractéristiques
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFF_APPR_SPECIALITE_SORTANTS]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFF_APPR_SPECIALITE_SORTANTS];
+PRINT 'Table EFF_APPR_SPECIALITE_SORTANTS supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_AGE]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_AGE];
+PRINT 'Table EFFECTIF_APPR_AGE supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_MODE_FORM]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_MODE_FORM];
+PRINT 'Table EFFECTIF_APPR_MODE_FORM supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_HANDICAPES]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_HANDICAPES];
+PRINT 'Table EFFECTIF_APPR_HANDICAPES supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_TYPE_VULNERABILITE]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_TYPE_VULNERABILITE];
+PRINT 'Table EFFECTIF_APPR_TYPE_VULNERABILITE supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_TYPE_FORMATION]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_TYPE_FORMATION];
+PRINT 'Table EFFECTIF_APPR_TYPE_FORMATION supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_VICT_VIOLENCES]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_VICT_VIOLENCES];
+PRINT 'Table EFFECTIF_APPR_VICT_VIOLENCES supprimée';
+
+IF OBJECT_ID('[BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_NIVEAU_INSTRUCT]') IS NOT NULL
+    DROP TABLE [BASE_SIGE_MINJEC].[dbo].[EFFECTIF_APPR_NIVEAU_INSTRUCT];
+PRINT 'Table EFFECTIF_APPR_NIVEAU_INSTRUCT supprimée';
+
+-- =============================================
+-- RÉSUMÉ DE LA SUPPRESSION
+-- =============================================
+
+PRINT '=============================================';
+PRINT 'SUPPRESSION TERMINÉE';
+PRINT '=============================================';
+PRINT 'Tables supprimées :';
+PRINT '- Formateurs : 5 tables';
+PRINT '- Programmes : 14 tables de données + 4 tables de référence';
+PRINT '- Apprenants : 15 tables';
+PRINT 'TOTAL : 38 tables supprimées';
+PRINT '=============================================';
+PRINT 'Vérifiez que les nouvelles structures dimensionnelles';
+PRINT 'fonctionnent correctement avant de supprimer ce script.';
+PRINT '=============================================';
+
+-- =============================================
+-- NOTES IMPORTANTES
+-- =============================================
+/*
+AVANT D'EXÉCUTER CE SCRIPT :
+
+1. VÉRIFICATIONS OBLIGATOIRES :
+   - Les nouvelles tables dimensionnelles sont créées et peuplées
+   - Les données migrées sont validées et cohérentes
+   - Les applications utilisent les nouvelles structures
+   - Une sauvegarde complète de la base est effectuée
+
+2. TABLES CRÉÉES PAR LES MIGRATIONS :
+   - DIMENSION_FORMATEUR, PERSONNEL_DETAILS, EFFECTIFS_FORMATEURS
+   - DIMENSION_PROGRAMMES, EFFECTIFS_PROGRAMMES, TYPE_INDICATEURS
+   - DIMENSION_APPRENANT, EFFECTIFS_APPRENANTS
+
+3. TABLES DE RÉFÉRENCE À VÉRIFIER :
+   - TYPE_INDICATEUR, TYPE_INDICATEURS_PROG_* peuvent être utilisées ailleurs
+   - Vérifiez les dépendances avant suppression
+
+4. RÉCUPÉRATION EN CAS DE PROBLÈME :
+   - Restaurez la sauvegarde effectuée avant suppression
+   - Ou recréez les tables à partir des scripts de migration
+*/

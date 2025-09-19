@@ -1,0 +1,44 @@
+# Fichiers de base de données
+*.mdf
+*.ldf
+*.bak
+*.trn
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*~
+
+# Fichiers de log
+*.log
+
+# Fichiers de sauvegarde
+*.backup
+*.old
+
+# Fichiers système Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Fichiers IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers de configuration locale
+config.local.*
+.env.local
+
+# Fichiers de données sensibles
+*_sensitive.*
+*_confidential.*
+
+# Fichiers de test
+test_*
+*_test.*
+
+# Fichiers de documentation temporaire
+*.draft
+*.work
