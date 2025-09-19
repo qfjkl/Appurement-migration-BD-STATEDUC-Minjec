@@ -1,12 +1,6 @@
 # RAPPORT DE MISSION
 ## Migrations de Base de Données - Projet STATEDUC MINJEC
 
-**Destinataire :** Direction  
-**Rédigé par :** [Votre nom]  
-**Date :** 18 septembre 2025  
-**Objet :** Appurement de la base de données pour faciliter l'exploitation des données statistiques éducatives
-
----
 
 ## RÉSUMÉ EXÉCUTIF
 

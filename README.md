@@ -640,8 +640,3 @@ Les migrations effectuées ont permis de :
 
 Le système est maintenant prêt pour supporter l'évolution future des besoins en matière de gestion des questionnaires éducatifs, **avec une courbe d'apprentissage drastiquement réduite pour le nouveau personnel**.
 
----
-
-*Rapport généré le : $(Get-Date -Format "dd/MM/yyyy HH:mm")*
-*Version : 1.0*
-*Modules : Appurement, Programmes, Formateurs*
